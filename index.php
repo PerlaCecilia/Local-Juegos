@@ -7,7 +7,6 @@ if (!isset($_SESSION['sesion']) || $_SESSION['tipo'] != 'admin') {
 
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,12 +25,11 @@ if (!isset($_SESSION['sesion']) || $_SESSION['tipo'] != 'admin') {
   <link rel="stylesheet" href="vistas/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <link rel="stylesheet" href="vistas/plugins/daterangepicker/daterangepicker.css">
   <link rel="stylesheet" href="vistas/plugins/summernote/summernote-bs4.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed" style="background-color: #3D404C">
+<body class="hold-transition sidebar-mini layout-fixed">
 
 <div class="wrapper">
   <!-- Main Sidebar Container -->
@@ -39,22 +37,11 @@ if (!isset($_SESSION['sesion']) || $_SESSION['tipo'] != 'admin') {
     <!-- Sidebar -->
     <div class="sidebar">
 
-
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <center>
-              <img src="vistas/img/GAMES-CLUB.png">
-            </center>
-          </li>
-        </ul>
-      </nav>
-
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item">
-            <a href="../controladores/logout.php" class="nav-link">
-              <i class="fas fa-bars nav-icon"></i>
+            <a href="#" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
               <p>Inicio</p>
             </a>
           </li>
@@ -65,7 +52,7 @@ if (!isset($_SESSION['sesion']) || $_SESSION['tipo'] != 'admin') {
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
             <a href="vistas/iniciar_Sesion.php" class="nav-link">
-              <i class="fas fa-sign-in-alt nav-icon"></i>
+              <i class="far fa-circle nav-icon"></i>
               <p>Iniciar sesión</p>
             </a>
           </li>
@@ -75,8 +62,8 @@ if (!isset($_SESSION['sesion']) || $_SESSION['tipo'] != 'admin') {
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="../controladores/logout.php" class="nav-link">
-              <i class="far fa-file nav-icon"></i>
+            <a href="#" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
               <p>Registrarse</p>
             </a>
           </li>
@@ -86,60 +73,62 @@ if (!isset($_SESSION['sesion']) || $_SESSION['tipo'] != 'admin') {
     </div>
     <!-- /.sidebar -->
   </aside>
-</div>
 
-<div class="content-wrapper">
-  <section class="content" style="background-color: #3D404C">
-    <div class="container-fluid">
 
-      <div class="row">
+  <div class="content-wrapper">
+    <section class="content">
+      <div class="container-fluid">
 
-        <div class="col-lg-3 col-6">
-          <div class="small-box bg-danger" style="border-radius: 20px">
-            <div class="inner">
-              <h3>+</h3>
+        <div class="row">
 
-              <p>Torneos</p>
+          <div class="col-lg-3 col-6">
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>+</h3>
+
+                <p>Torneos</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="vistas/normal_Torneo.php" target="" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-            <div class="icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <a href="vistas/normal_Torneo.php" target="_blank" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
           </div>
-        </div>
 
-        <div class="col-lg-3 col-6">
-          <div class="small-box bg-warning" style="border-radius: 20px">
-            <div class="inner">
-              <h3>+</h3>
+          <div class="col-lg-3 col-6">
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>+</h3>
 
-              <p>Juegos</p>
+                <p>Juegos</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="vistas/normal_Juegos.php" target="" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-            <div class="icon">
-              <i class="fa fa-gamepad"></i>
-            </div>
-            <a href="vistas/normal_Juegos.php" target="_blank" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
           </div>
-        </div>
 
-        <div class="col-lg-3 col-6">
-          <div class="small-box bg-info" style="border-radius: 20px">
-            <div class="inner">
-              <h3>+</h3>
+          <div class="col-lg-3 col-6">
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>+</h3>
 
-              <p>Consolas</p>
+                <p>Consolas</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="vistas/normal_Consola.php" target="" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-            <div class="icon">
-              <i class="material-icons">gamepad</i>
-            </div>
-            <a href="vistas/normal_Consola.php" target="_blank" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
           </div>
-        </div>
 
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>
+
 
 
 <!-- jQuery -->

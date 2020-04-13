@@ -25,7 +25,6 @@ if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 'admin') {
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 </head>
@@ -41,7 +40,7 @@ if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 'admin') {
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="admin_Inicio.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Inicio</p>
             </a>

@@ -42,7 +42,7 @@ include_once '../modelos/selectTables.php';
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="admin_Inicio.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Inicio</p>
               </a>
@@ -53,7 +53,18 @@ include_once '../modelos/selectTables.php';
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="vistas/iniciar_Sesion.php" class="nav-link">
+              <a href="admin_cGamer.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Gamers</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="admin_cJuegos.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Juegos</p>
               </a>
@@ -64,7 +75,7 @@ include_once '../modelos/selectTables.php';
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="vistas/iniciar_Sesion.php" class="nav-link">
+              <a href="admin_cConsolas.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Consolas</p>
               </a>
@@ -75,9 +86,64 @@ include_once '../modelos/selectTables.php';
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="vistas/iniciar_Sesion.php" class="nav-link">
+              <a href="admin_cAccesorio.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Accesorios</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="admin_cInstalado.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Juegos Instalados</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="admin_cTorneo.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Torneos</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="admin_cDetalles.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Detalles</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="admin_cPremio.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Premios</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="admin_cRenta.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Rentas</p>
               </a>
             </li>
           </ul>
