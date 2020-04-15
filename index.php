@@ -62,7 +62,7 @@ if (!isset($_SESSION['sesion']) || $_SESSION['tipo'] != 'admin') {
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="vistas/registroNormal.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Registrarse</p>
             </a>
