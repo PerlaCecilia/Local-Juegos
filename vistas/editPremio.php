@@ -1,5 +1,18 @@
 <?php
 include_once "../modelos/selectTables.php";
+include_once("../controladores/conexionEspecial.php");
+
+
+$nombreFijo = $_POST['editar'];
+
+$cuery = "SELECT premio FROM premio WHERE id_premio = '$nombreFijo'";
+$result = mysqli_query($BD,$cuery);
+
+$numrows = mysqli_num_rows($result);
+
+while($row = mysqli_fetch_assoc($result)){
+  $nombre = $row['premio'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +20,7 @@ include_once "../modelos/selectTables.php";
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Juegos Instalados</title>
+  <title>Premios</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -162,33 +175,20 @@ include_once "../modelos/selectTables.php";
           <div class="col-md-12">
             <div class="card card-primary">
               <div class="card-header">
-                <h3>Agregar Instalados</h3>
+                <h3>Agregar Premio</h3>
               </div>
-              <form role="form" id="quickForm" action="../controladores/addInstalado.php" method="post">
+              <form role="form" id="quickForm" action="../controladores/act_Premio.php" method="post">
 
                 <center>
                 <table class="table table-hover">
-
                 <tr>
-                <td><B>Juego:</B></td>
-                <td><select name="juego">
-                    <option id="0">...</option>
-                    <option id="1" value="Call_Of_Duty">Call Of Duty</option>
-                    <option id="2" value="Infamous_Second_Son">Infamous Second Son</option>
-                </td>
-
-                <tr>
-                <td><B>Consola:</B></td>
-                <td><select name="consola">
-                    <option id="0">...</option>
-                    <option id="1" value="Xbox">Xbox One S</option>
-                    <option id="2" value="Playstation">PlayStation 4</option>
-                </td>
-
-                <tr>
+                <td><B>Nombre:</B></td>
+                <td> <INPUT TYPE="text" NAME="nombre" id="nombre" value="<?php echo $nombre; ?>" SIZE=40 MAXLENGTH=50 required></td>
 
                 <td ALIGN=CENTER colspan="2">
-                <INPUT NAME = "agregar" TYPE="submit" VALUE="Agregar Juego Instalado">
+                  <br>
+                  <button class="btn btn-success" type="submit" name="editar"
+              value="<?php echo htmlspecialchars($nombreFijo); ?>">Editar</button>
 
                 </table>
                 </center>

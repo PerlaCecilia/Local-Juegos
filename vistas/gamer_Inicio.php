@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+//session_start();
+include_once '../controladores/identificador.php';
+$nombre = $_SESSION['usuario'];
 if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 'gamer') {
   header('Location: ../index.php');
 }
@@ -51,9 +53,9 @@ if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 'gamer') {
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="vistas/iniciar_Sesion.php" class="nav-link">
+            <a href="gamer_Rentas.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Iniciar sesión</p>
+              <p>Mis rentas</p>
             </a>
           </li>
         </ul>
@@ -62,9 +64,20 @@ if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 'gamer') {
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="gamer_Torneo.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Registrarse</p>
+              <p>Torneos</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="../controladores/logout.php" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Cerrar sesion</p>
             </a>
           </li>
         </ul>
@@ -74,59 +87,13 @@ if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 'gamer') {
     <!-- /.sidebar -->
   </aside>
 
+  <?php
+  echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".$nombre;
+  echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".$id;
 
-  <div class="content-wrapper">
-    <section class="content">
-      <div class="container-fluid">
+  ?>
 
-        <div class="row">
 
-          <div class="col-lg-3 col-6">
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>+</h3>
-
-                <p>Torneos</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="vistas/normal_Torneo.php" target="" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>+</h3>
-
-                <p>Juegos</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="vistas/normal_Juegos.php" target="" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>+</h3>
-
-                <p>Consolas</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="vistas/normal_Consola.php" target="" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </div>
 </div>
 
 

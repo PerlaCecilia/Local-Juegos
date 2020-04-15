@@ -14,7 +14,7 @@ include_once '../modelos/selectTables.php';
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Accesorios</title>
+  <title>Accesorios Admin</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -177,7 +177,7 @@ include_once '../modelos/selectTables.php';
                   <h3>Accesorios</h3>
                 </div>
 
-                <a href="agregarCliente.php">
+                <a href="agregarAccesorio.php">
                   <input type="button" name="" value="Nuevo" class="btn btn-primary">
                 </a>
 
@@ -201,7 +201,7 @@ include_once '../modelos/selectTables.php';
                         <td><?php echo $resultadoAdminAccesorio -> nombre ?></td>
 
                         <td align="right">
-                        <form action="#" method="post">
+                        <form action="editAccesorio.php" method="post">
                         <button class="btn btn-success" type="submit" name="editar"
                         value="<?php echo htmlspecialchars($identificador); ?>">Editar
                         </button>
@@ -209,7 +209,7 @@ include_once '../modelos/selectTables.php';
                         </td>
 
                         <td>
-                        <form method="post" action="#">
+                        <form method="post" action="../controladores/borrar_Accesorio.php">
                         <button type="submit" class="btn btn-danger" name="id"
                         value="<?php echo htmlspecialchars($identificador); ?>">Borrar
                         </button>

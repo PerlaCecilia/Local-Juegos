@@ -15,7 +15,7 @@ include_once '../modelos/selectTables.php';
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Consolas Admin</title>
+  <title>Premios Admin</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -173,7 +173,7 @@ include_once '../modelos/selectTables.php';
                   <h3>Premios</h3>
                 </div>
 
-                <a href="agregarCliente.php">
+                <a href="agregarPremio.php">
                   <input type="button" name="" value="Nuevo" class="btn btn-primary">
                 </a>
 
@@ -195,8 +195,9 @@ include_once '../modelos/selectTables.php';
                         <tr>
                           <td><?php echo $resultadoAdminPremio -> id_premio ?></td>
                           <td><?php echo $resultadoAdminPremio -> premio ?></td>
+                          
                         <td>
-                        <form action="#" method="post">
+                        <form action="editPremio.php" method="post">
                         <button class="btn btn-success" type="submit" name="editar"
                         value="<?php echo htmlspecialchars($identificador); ?>">Editar
                         </button>
@@ -204,7 +205,7 @@ include_once '../modelos/selectTables.php';
                         </td>
 
                         <td>
-                        <form method="post" action="#">
+                        <form method="post" action="../controladores/borrar_Premio.php">
                         <button type="submit" class="btn btn-danger" name="id"
                         value="<?php echo htmlspecialchars($identificador); ?>">Borrar
                         </button>

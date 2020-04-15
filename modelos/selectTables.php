@@ -95,4 +95,24 @@
     // Mensaje de alerta
   }
 
+  //Torneo vista gamer
+
+  $getTornGamer = $BD -> query("SELECT t.id_torneo as id, t.nombre, j.nombre as juego,
+  t.fecha, t.hora, m.tipo as modalidad, f.tipo as forma, t.max_jugadores,
+  t.descripcion, e.tipo as estatus FROM torneo t
+  INNER JOIN juego j ON t.juego = j.id_juego
+  INNER JOIN modalidad m ON t.modalidad = m.id_modalidad
+  INNER JOIN forma f ON t.forma = f.id_forma
+  INNER JOIN estatus e ON t.estatus = e.id_estatus
+  WHERE estatus = 1 OR estatus = 3");
+  $resTornGamer = $getTornGamer -> fetchAll(PDO::FETCH_OBJ);
+
+  //"if" en caso de que retorne NULL
+  if($resTornGamer == null || empty($resTornGamer)){
+    // Mensaje de alerta
+  }
+  /*
+  SELECT t.id_torneo as id, t.nombre, j.nombre as juego, t.fecha, t.hora, m.tipo as modalidad, f.tipo as forma, t.max_jugadores, t.descripcion, e.tipo as estatus FROM torneo t INNER JOIN juego j ON t.juego = j.id_juego INNER JOIN modalidad m ON t.modalidad = m.id_modalidad INNER JOIN forma f ON t.forma = f.id_forma INNER JOIN estatus e ON t.estatus = e.id_estatus WHERE estatus = 1 OR estatus = 3
+  */
+
 ?>
