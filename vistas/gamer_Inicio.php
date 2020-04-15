@@ -87,11 +87,6 @@ if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 'gamer') {
     <!-- /.sidebar -->
   </aside>
 
-  <?php
-  echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".$nombre;
-  echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".$id;
-
-  ?>
 
 
 </div>
