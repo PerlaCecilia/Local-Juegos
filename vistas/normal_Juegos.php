@@ -97,7 +97,7 @@ include_once "../modelos/selectTables.php";
                       <tr>
 
                       <td><?php echo $resultadoNormalJuego -> id_juego ?></td>
-                      <td style="size:20%"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $resultadoNormalJuego -> imagen ).'"/>'; ?></td>
+                      <td style="size:20%"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $resultadoNormalJuego -> imagen ).'"style="height: 120px; width: 75px;"/>'; ?></td>
                       <td><?php echo $resultadoNormalJuego -> nombre ?></td>
                       </tr>
 

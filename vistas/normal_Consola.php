@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-if (isset($_SESSION['usuario']){
+/*if (isset($_SESSION['usuario']){
   if ($_SESSION['tipo'] == 'admin') {
     header('Location: admin_Inicio.php');
   } elseif ($_SESSION['tipo'] == 'admin') {
     header('Location: gamer_Inicio.php');
   }
-}
+}*/
 
 include_once "../modelos/selectTables.php";
 ?>
@@ -103,8 +103,8 @@ include_once "../modelos/selectTables.php";
                       <?php foreach ($resultadoNormalConsola as $resultadoNormalConsola){ ?>
                       <tr>
 
-                      <td><?php echo $resultadoNormalConsola -> id_consola ?></td>
-                      <td><?php echo $resultadoNormalConsola -> id_plataforma ?></td>
+                      <td><?php echo $resultadoNormalConsola -> id ?></td>
+                      <td><?php echo $resultadoNormalConsola -> plataforma ?></td>
                       <td><?php echo $resultadoNormalConsola -> numero ?></td>
                       <td><?php echo $resultadoNormalConsola -> serial ?></td>
                       <td><?php echo $resultadoNormalConsola -> nombre ?></td>

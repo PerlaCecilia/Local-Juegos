@@ -103,7 +103,7 @@ include_once "../modelos/selectTables.php";
                       <?php foreach ($resultadoNormalTorneo as $resultadoNormalTorneo){ ?>
                       <tr>
 
-                      <td><?php echo $resultadoNormalTorneo -> id_torneo ?></td>
+                      <td><?php echo $resultadoNormalTorneo -> id ?></td>
                       <td><?php echo $resultadoNormalTorneo -> nombre ?></td>
                       <td><?php echo $resultadoNormalTorneo -> juego ?></td>
                       <td><?php echo $resultadoNormalTorneo -> fecha ?></td>

@@ -148,7 +148,7 @@ include_once '../modelos/selectTables.php';
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="../controladores/logout.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cerrar sesion</p>
               </a>
@@ -170,7 +170,7 @@ include_once '../modelos/selectTables.php';
             <div class="col-md-12">
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3>Juegos</h3>
+                  <h3>Gamers</h3>
                 </div>
 
                 <a href="agregarGamer.php">
@@ -209,7 +209,7 @@ include_once '../modelos/selectTables.php';
                         <td><?php echo $resultadoAdminGamer -> telefono ?></td>
                         <td><?php echo $resultadoAdminGamer -> email ?></td>
                         <td><?php echo $resultadoAdminGamer -> gamertag ?></td>
-                        <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($resultadoAdminGamer -> foto).'">' ?></td>
+                        <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($resultadoAdminGamer -> foto).'"style="height: 120px; width: 75px;"/>' ?></td>
                         <td><?php echo $resultadoAdminGamer -> id_redsocial ?></td>
 
                         <td>

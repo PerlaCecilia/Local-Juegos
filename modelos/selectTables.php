@@ -94,7 +94,5 @@
   if($resultadoAdminGamer == null || empty($resultadoAdminGamer)){
     // Mensaje de alerta
   }
-  //echo '<img src="data:image/jpeg;base64,'.base64_encode( $resultadoNormalJuego -> imagen ).'"/>';
-  //<img src="data:image/jpeg;base64,'.base64_encode($resultadoAdminGamer -> foto).'">
 
 ?>

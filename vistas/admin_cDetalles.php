@@ -148,7 +148,7 @@ include_once '../modelos/selectTables.php';
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="../controladores/logout.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cerrar sesion</p>
               </a>
@@ -173,10 +173,6 @@ include_once '../modelos/selectTables.php';
                   <h3>Detalles</h3>
                 </div>
 
-                <a href="agregarCliente.php">
-                  <input type="button" name="" value="Nuevo" class="btn btn-primary">
-                </a>
-
                 <form class="" action="index.html" method="post">
 
                   <!--nombre, usuario, correo-->
@@ -185,7 +181,7 @@ include_once '../modelos/selectTables.php';
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Modalidad</th>
+                          <th>Forma</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -195,22 +191,6 @@ include_once '../modelos/selectTables.php';
                         <tr>
                           <td><?php echo $resultadoAdminForma -> id_forma ?></td>
                           <td><?php echo $resultadoAdminForma -> tipo ?></td>
-                        <td>
-                        <form action="#" method="post">
-                        <button class="btn btn-success" type="submit" name="editar"
-                        value="<?php echo htmlspecialchars($identificador); ?>">Editar
-                        </button>
-                        </form>
-                        </td>
-
-                        <td>
-                        <form method="post" action="#">
-                        <button type="submit" class="btn btn-danger" name="id"
-                        value="<?php echo htmlspecialchars($identificador); ?>">Borrar
-                        </button>
-                        </form>
-                        </td>
-
                         </tr>
 
                         <?php } ?>
@@ -223,9 +203,6 @@ include_once '../modelos/selectTables.php';
 
                 <br><br>
 
-                <a href="agregarCliente.php">
-                  <input type="button" name="" value="Nuevo" class="btn btn-primary">
-                </a>
 
                 <form class="" action="index.html" method="post">
 
@@ -245,22 +222,6 @@ include_once '../modelos/selectTables.php';
                         <tr>
                           <td><?php echo $resultadoAdminMod -> id_modalidad ?></td>
                           <td><?php echo $resultadoAdminMod -> tipo ?></td>
-                        <td>
-                        <form action="#" method="post">
-                        <button class="btn btn-success" type="submit" name="editar"
-                        value="<?php echo htmlspecialchars($identificador2); ?>">Editar
-                        </button>
-                        </form>
-                        </td>
-
-                        <td>
-                        <form method="post" action="#">
-                        <button type="submit" class="btn btn-danger" name="id"
-                        value="<?php echo htmlspecialchars($identificador2); ?>">Borrar
-                        </button>
-                        </form>
-                        </td>
-
                         </tr>
 
                         <?php } ?>
@@ -273,10 +234,6 @@ include_once '../modelos/selectTables.php';
 
                 <br><br>
 
-                <a href="agregarCliente.php">
-                  <input type="button" name="" value="Nuevo" class="btn btn-primary">
-                </a>
-
                 <form class="" action="index.html" method="post">
 
                   <!--nombre, usuario, correo-->
@@ -285,7 +242,7 @@ include_once '../modelos/selectTables.php';
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Modalidad</th>
+                          <th>Estatus</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -295,21 +252,6 @@ include_once '../modelos/selectTables.php';
                         <tr>
                           <td><?php echo $resultadoAdminEsta -> id_estatus ?></td>
                           <td><?php echo $resultadoAdminEsta -> tipo ?></td>
-                        <td>
-                        <form action="#" method="post">
-                        <button class="btn btn-success" type="submit" name="editar"
-                        value="<?php echo htmlspecialchars($identificador3); ?>">Editar
-                        </button>
-                        </form>
-                        </td>
-
-                        <td>
-                        <form method="post" action="#">
-                        <button type="submit" class="btn btn-danger" name="id"
-                        value="<?php echo htmlspecialchars($identificador3); ?>">Borrar
-                        </button>
-                        </form>
-                        </td>
 
                         </tr>
 
