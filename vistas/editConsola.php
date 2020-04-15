@@ -196,7 +196,7 @@ while($row = mysqli_fetch_assoc($result)){
 
                 <tr>
                 <td><B>Numero:</B></td>
-                <td> <INPUT TYPE="text" NAME="numero" id="nombre" value="<?php echo $numero; ?>" SIZE=40 MAXLENGTH=50 required></td>
+                <td> <INPUT TYPE="number" NAME="numero" id="nombre" value="<?php echo $numero; ?>" SIZE=40 MAXLENGTH=50 required></td>
 
                 <tr>
                 <td><B>Serial:</B></td>

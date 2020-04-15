@@ -197,7 +197,7 @@ include_once "../modelos/selectTables.php";
                 <td> <INPUT TYPE="email" NAME="correo" id="correo" value="" SIZE=40 required></td>
 
                 <tr>
-                <td><B>Gamerag:</B></td>
+                <td><B>Gamer:</B></td>
                 <td> <INPUT TYPE="text" NAME="usuario" id="usuario" value="" SIZE=40 required></td>
 
                 <tr>

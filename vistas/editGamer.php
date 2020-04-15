@@ -208,7 +208,7 @@ while($row = mysqli_fetch_assoc($result)){
 
                 <tr>
                 <td><B>Fecha de Nacimiento:</B></td>
-                <td> <INPUT TYPE="text" NAME="fecha_nac" id="fecha_nac" value="<?php echo $fecha_nac; ?>" placeholder="AAAA-MM-DD" SIZE=40 MAXLENGTH=48 required></td>
+                <td> <INPUT TYPE="date" NAME="fecha_nac" id="fecha_nac" value="<?php echo $fecha_nac; ?>" placeholder="AAAA-MM-DD" SIZE=40 MAXLENGTH=48 required></td>
 
                 <tr>
                 <td><B>Telefono:</B></td>

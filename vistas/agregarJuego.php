@@ -171,12 +171,16 @@ include_once "../modelos/selectTables.php";
                 <tr>
                 <td><B>Nombre:</B></td>
                 <td> <INPUT TYPE="text" NAME="nombre" id="nombre" value="" SIZE=40 MAXLENGTH=50 required></td>
+                </tr>
 
                 <tr>
-
+                <td><B>Imagen:</B></td>
+                <td> <INPUT TYPE="file" NAME="imagen" id="imagen" value="" SIZE=40 MAXLENGTH=50 required></td>
+                </tr>
+                <tr>
                 <td ALIGN=CENTER colspan="2">
                 <INPUT NAME = "agregar" TYPE="submit" VALUE="Agregar Juego">
-
+                </tr>
                 </table>
                 </center>
 

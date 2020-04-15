@@ -179,7 +179,7 @@ include_once "../modelos/selectTables.php";
 
                 <tr>
                 <td><B>Numero:</B></td>
-                <td> <INPUT TYPE="text" NAME="numero" id="apellidos" value="" SIZE=40 MAXLENGTH=48 required></td>
+                <td> <INPUT TYPE="number" NAME="numero" id="apellidos" value="" SIZE=40 MAXLENGTH=48 required></td>
 
                 <tr>
                 <td><B>Serial:</B></td>

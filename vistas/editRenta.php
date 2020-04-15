@@ -195,11 +195,11 @@ while($row = mysqli_fetch_assoc($result)){
                 
                 <tr>
                 <td><B>Fecha:</B></td>
-                <td> <INPUT TYPE="text" NAME="fecha" id="nombre" value="<?php echo $fecha; ?>" placeholder="AAAA-MM-DD" SIZE=40 MAXLENGTH=50 required></td>
+                <td> <INPUT TYPE="date" NAME="fecha" id="nombre" value="<?php echo $fecha; ?>" placeholder="AAAA-MM-DD" SIZE=40 MAXLENGTH=50 required></td>
 
                 <tr>
                 <td><B>Hora:</B></td>
-                <td> <INPUT TYPE="text" NAME="hora" id="apellidos" value="<?php echo $hora; ?>" placeholder="HH:MM:SS" SIZE=40 MAXLENGTH=48 required></td>
+                <td> <INPUT TYPE="time" NAME="hora" id="apellidos" value="<?php echo $hora; ?>" placeholder="HH:MM:SS" SIZE=40 MAXLENGTH=48 required></td>
 
                 <tr>
                 <td><B>Gamer:</B></td>

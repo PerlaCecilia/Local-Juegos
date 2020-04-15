@@ -182,11 +182,11 @@ include_once "../modelos/selectTables.php";
 
                 <tr>
                 <td><B>Fecha:</B></td>
-                <td> <INPUT TYPE="text" NAME="fecha" id="fecha_nac" value="" placeholder="AAAA-MM-DD" SIZE=40 MAXLENGTH=48 required></td>
+                <td> <INPUT TYPE="date" NAME="fecha" id="fecha_nac" value="" placeholder="AAAA-MM-DD" SIZE=40 MAXLENGTH=48 required></td>
 
                 <tr>
                 <td><B>Hora:</B></td>
-                <td> <INPUT TYPE="text" NAME="hora" id="telefono" value="" placeholder="HH:MM:SS" SIZE=40 required></td>
+                <td> <INPUT TYPE="time" NAME="hora" id="telefono" value="" placeholder="HH:MM:SS" SIZE=40 required></td>
 
                 <tr>
                 <td><B>Modalidad:</B></td>
@@ -207,7 +207,7 @@ include_once "../modelos/selectTables.php";
 
                 <tr>
                 <td><B>Jugadores:</B></td>
-                <td> <INPUT TYPE="text" NAME="jugadores" id="correo" value="" SIZE=40 required></td>
+                <td> <INPUT TYPE="number" NAME="jugadores" id="correo" value="" SIZE=40 required></td>
 
                 <tr>
                 <td><B>Descripcion:</B></td>
