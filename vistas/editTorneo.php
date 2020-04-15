@@ -1,21 +1,39 @@
 <?php
+//include_once("conexion.php");
+include_once("../controladores/conexionEspecial.php");
+//include_once "../modelos/selectTables.php";
 
-session_start();
-if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 'admin') {
-  header('Location: ../index.php');
+$nombreFijo = $_POST['editar'];
+//echo $nombreFijo;
+
+$cuery = "SELECT nombre, juego, fecha, hora, modalidad, forma, max_jugadores, descripcion, estatus FROM torneo WHERE id_torneo = '$nombreFijo'";
+$result = mysqli_query($BD,$cuery);
+
+$numrows = mysqli_num_rows($result);
+
+while($row = mysqli_fetch_assoc($result)){
+  $nombre = $row['nombre'];
+  $juego = $row['juego'];
+  $fecha = $row['fecha'];
+  $hora = $row['hora'];
+  $modalidad = $row['modalidad'];
+  $forma = $row['forma'];
+  $max_jugadores = $row['max_jugadores'];
+  $descripcion = $row['descripcion'];
+  $estatus = $row['estatus'];
 }
-
-include_once '../modelos/selectTables.php';
-
 ?>
 
+<?php
+include_once "../modelos/selectTables.php";
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Consolas Admin</title>
+  <title>Torneos</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,7 +46,6 @@ include_once '../modelos/selectTables.php';
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-
   <div class="wrapper">
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -159,75 +176,87 @@ include_once '../modelos/selectTables.php';
       </div>
       <!-- /.sidebar -->
     </aside>
+  </div>
 
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <br>
-      <section class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card card-primary">
-                <div class="card-header">
-                  <h3>Consolas</h3>
-                </div>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <br>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3>Editar Torneo</h3>
+              </div>
+              <form role="form" id="quickForm" action="../controladores/act_Torneo.php" method="post">
 
-                <a href="agregarConsola.php">
-                  <input type="button" name="" value="Nuevo" class="btn btn-primary">
-                </a>
+                <center>
+                <table class="table table-hover">
+                <tr>
+                <td><B>Nombre Del Torneo:</B></td>
+                <td> <INPUT TYPE="text" NAME="nombre" id="nombre" value="<?php echo $nombre; ?>" SIZE=40 MAXLENGTH=50 required></td>
 
-                <form class="" action="editConsola.php" method="post">
+                <tr>
+                <td><B>Juego:</B></td>
+                <td><select name="juego">
+                    <option id="0">...</option>
+                    <option id="1" value="CallOfDuty">Call Of Duty</option>
+                    <option id="2" value="Infamous">Infamous Second Son</option>
+                </td>
 
-                  <!--nombre, usuario, correo-->
-                  <div class="crudAdmin" align="center">
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>Plataforma</th>
-                          <th>Numero</th>
-                          <th>Serial</th>
-                          <th>Nombre</th>
-                        </tr>
-                      </thead>
-                      <tbody>
+                <tr>
+                <td><B>Fecha:</B></td>
+                <td> <INPUT TYPE="text" NAME="fecha" id="fecha_nac" value="<?php echo $fecha; ?>" placeholder="AAAA-MM-DD" SIZE=40 MAXLENGTH=48 required></td>
 
-                        <?php foreach ($resultadoNormalConsola as $resultadoNormalConsola){ ?>
-                        <?php $identificador = $resultadoNormalConsola -> id ?>
-                        <tr>
-                        <td><?php echo $resultadoNormalConsola -> id ?></td>
-                        <td><?php echo $resultadoNormalConsola -> plataforma ?></td>
-                        <td><?php echo $resultadoNormalConsola -> numero ?></td>
-                        <td><?php echo $resultadoNormalConsola -> serial ?></td>
-                        <td><?php echo $resultadoNormalConsola -> nombre ?></td>
+                <tr>
+                <td><B>Hora:</B></td>
+                <td> <INPUT TYPE="text" NAME="hora" id="telefono" value="<?php echo $hora; ?>" placeholder="HH:MM:SS" SIZE=40 required></td>
 
-                        <td>
-                        <form action="editConsola.php" method="post">
-                        <button class="btn btn-success" type="submit" name="editar"
-                        value="<?php echo htmlspecialchars($identificador); ?>">Editar
-                        </button>
-                        </form>
-                        </td>
+                <tr>
+                <td><B>Modalidad:</B></td>
+                <td><select name="modalidad">
+                    <option id="0">...</option>
+                    <option id="1" value="Single">Single</option>
+                    <option id="2" value="Duo">Duo</option>
+                    <option id="2" value="Trio">Trio</option>
+                </td>
 
-                        <td>
-                        <form method="post" action="../controladores/borrar_Consola.php">
-                        <button type="submit" class="btn btn-danger" name="id"
-                        value="<?php echo htmlspecialchars($identificador); ?>">Borrar
-                        </button>
-                        </form>
-                        </td>
+                <tr>
+                <td><B>Forma:</B></td>
+                <td><select name="forma">
+                    <option id="0">...</option>
+                    <option id="1" value="Presencial">Presencial</option>
+                    <option id="2" value="Linea">Linea</option>
+                </td>
 
-                        </tr>
+                <tr>
+                <td><B>Jugadores:</B></td>
+                <td> <INPUT TYPE="text" NAME="jugadores" id="correo" value="<?php echo $max_jugadores; ?>" SIZE=40 required></td>
 
-                        <?php } ?>
+                <tr>
+                <td><B>Descripcion:</B></td>
+                <td> <INPUT TYPE="text" NAME="descripcion" id="usuario" value="<?php echo $descripcion; ?>" SIZE=40 required></td>
 
-                      </tbody>
-                    </table>
-                  </div>
+                <tr>
+                <td><B>Estatus:</B></td>
+                <td><select name="estatus">
+                    <option id="0">...</option>
+                    <option id="1" value="Espera">Espera</option>
+                    <option id="2" value="EnCurso">En Curso</option>
+                    <option value="Finalizado">Finalizado</option>
+                </td>
 
-                </form>
+                <tr>
 
+                <td ALIGN=CENTER colspan="2">
+                <!--<INPUT NAME = "agregar" TYPE="submit" VALUE="Agregar Torneo"> -->
+                <button class="btn btn-success" type="submit" name="editar"
+            value="<?php echo htmlspecialchars($nombreFijo); ?>">Editar</button>
+
+                </table>
+                </center>
 
               </form>
             </div>
@@ -240,25 +269,12 @@ include_once '../modelos/selectTables.php';
   </div>
 
 
+  <script src="../../plugins/jquery/jquery.min.js"></script>
+  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+  <script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
+  <script src="../../dist/js/adminlte.min.js"></script>
+  <script src="../../dist/js/demo.js"></script>
 
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="plugins/chart.js/Chart.min.js"></script>
-<script src="plugins/sparklines/sparkline.js"></script>
-<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<script src="dist/js/adminlte.js"></script>
-<script src="dist/js/pages/dashboard.js"></script>
-<script src="dist/js/demo.js"></script>
 </body>
-    </html>
+</html>

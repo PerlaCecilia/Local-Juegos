@@ -4,7 +4,7 @@
 if (!isset($_SESSION['sesion']) || $_SESSION['tipo'] != 'admin') {
   header('Location: ../index.php');
 }*/
-
+/**/
 ?>
 
 <!DOCTYPE html>

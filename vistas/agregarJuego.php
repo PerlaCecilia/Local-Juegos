@@ -1,21 +1,13 @@
 <?php
-
-session_start();
-if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 'admin') {
-  header('Location: ../index.php');
-}
-
-include_once '../modelos/selectTables.php';
-
+include_once "../modelos/selectTables.php";
 ?>
-
 
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Consolas Admin</title>
+  <title>Juegos</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,7 +20,6 @@ include_once '../modelos/selectTables.php';
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-
   <div class="wrapper">
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -159,75 +150,35 @@ include_once '../modelos/selectTables.php';
       </div>
       <!-- /.sidebar -->
     </aside>
+  </div>
 
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <br>
-      <section class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card card-primary">
-                <div class="card-header">
-                  <h3>Consolas</h3>
-                </div>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <br>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3>Agregar Juego</h3>
+              </div>
+              <form role="form" id="quickForm" action="../controladores/addJuego.php" method="post">
 
-                <a href="agregarConsola.php">
-                  <input type="button" name="" value="Nuevo" class="btn btn-primary">
-                </a>
+                <center>
+                <table class="table table-hover">
+                <tr>
+                <td><B>Nombre:</B></td>
+                <td> <INPUT TYPE="text" NAME="nombre" id="nombre" value="" SIZE=40 MAXLENGTH=50 required></td>
 
-                <form class="" action="editConsola.php" method="post">
+                <tr>
 
-                  <!--nombre, usuario, correo-->
-                  <div class="crudAdmin" align="center">
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>Plataforma</th>
-                          <th>Numero</th>
-                          <th>Serial</th>
-                          <th>Nombre</th>
-                        </tr>
-                      </thead>
-                      <tbody>
+                <td ALIGN=CENTER colspan="2">
+                <INPUT NAME = "agregar" TYPE="submit" VALUE="Agregar Juego">
 
-                        <?php foreach ($resultadoNormalConsola as $resultadoNormalConsola){ ?>
-                        <?php $identificador = $resultadoNormalConsola -> id ?>
-                        <tr>
-                        <td><?php echo $resultadoNormalConsola -> id ?></td>
-                        <td><?php echo $resultadoNormalConsola -> plataforma ?></td>
-                        <td><?php echo $resultadoNormalConsola -> numero ?></td>
-                        <td><?php echo $resultadoNormalConsola -> serial ?></td>
-                        <td><?php echo $resultadoNormalConsola -> nombre ?></td>
-
-                        <td>
-                        <form action="editConsola.php" method="post">
-                        <button class="btn btn-success" type="submit" name="editar"
-                        value="<?php echo htmlspecialchars($identificador); ?>">Editar
-                        </button>
-                        </form>
-                        </td>
-
-                        <td>
-                        <form method="post" action="../controladores/borrar_Consola.php">
-                        <button type="submit" class="btn btn-danger" name="id"
-                        value="<?php echo htmlspecialchars($identificador); ?>">Borrar
-                        </button>
-                        </form>
-                        </td>
-
-                        </tr>
-
-                        <?php } ?>
-
-                      </tbody>
-                    </table>
-                  </div>
-
-                </form>
-
+                </table>
+                </center>
 
               </form>
             </div>
@@ -240,25 +191,12 @@ include_once '../modelos/selectTables.php';
   </div>
 
 
+  <script src="../../plugins/jquery/jquery.min.js"></script>
+  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+  <script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
+  <script src="../../dist/js/adminlte.min.js"></script>
+  <script src="../../dist/js/demo.js"></script>
 
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="plugins/chart.js/Chart.min.js"></script>
-<script src="plugins/sparklines/sparkline.js"></script>
-<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<script src="dist/js/adminlte.js"></script>
-<script src="dist/js/pages/dashboard.js"></script>
-<script src="dist/js/demo.js"></script>
 </body>
-    </html>
+</html>

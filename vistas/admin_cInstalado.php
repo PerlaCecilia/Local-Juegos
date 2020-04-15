@@ -173,11 +173,11 @@ include_once '../modelos/selectTables.php';
                   <h3>Juegos Instalados</h3>
                 </div>
 
-                <a href="agregarCliente.php">
+                <a href="agregarInstalado.php">
                   <input type="button" name="" value="Nuevo" class="btn btn-primary">
                 </a>
 
-                <form class="" action="index.html" method="post">
+                <form class="" action="editInstalado.php" method="post">
 
                   <!--nombre, usuario, correo-->
                   <div class="crudAdmin" align="center">
@@ -192,14 +192,14 @@ include_once '../modelos/selectTables.php';
                       <tbody>
 
                         <?php foreach ($resultadoAdminInstalado as $resultadoAdminInstalado){ ?>
-                        <?php $identificador = $resultadoAdminInstalado -> id_instalado ?>
+                        <?php $identificador = $resultadoAdminInstalado -> id ?>
                         <tr>
-                        <td><?php echo $resultadoAdminInstalado -> id_instalado ?></td>
-                        <td><?php echo $resultadoAdminInstalado -> id_juego ?></td>
-                        <td><?php echo $resultadoAdminInstalado -> id_consola ?></td>
+                        <td><?php echo $resultadoAdminInstalado -> id ?></td>
+                        <td><?php echo $resultadoAdminInstalado -> juego ?></td>
+                        <td><?php echo $resultadoAdminInstalado -> consola ?></td>
 
                         <td>
-                        <form action="#" method="post">
+                        <form action="editInstalado.php" method="post">
                         <button class="btn btn-success" type="submit" name="editar"
                         value="<?php echo htmlspecialchars($identificador); ?>">Editar
                         </button>
@@ -207,7 +207,7 @@ include_once '../modelos/selectTables.php';
                         </td>
 
                         <td>
-                        <form method="post" action="#">
+                        <form method="post" action="../controladores/borrar_Instalado.php">
                         <button type="submit" class="btn btn-danger" name="id"
                         value="<?php echo htmlspecialchars($identificador); ?>">Borrar
                         </button>

@@ -173,11 +173,11 @@ include_once '../modelos/selectTables.php';
                   <h3>Juegos</h3>
                 </div>
 
-                <a href="agregarCliente.php">
+                <a href="agregarGamer.php">
                   <input type="button" name="" value="Nuevo" class="btn btn-primary">
                 </a>
 
-                <form class="" action="index.html" method="post">
+                <form class="" action="editGamer.php" method="post">
 
                   <!--nombre, usuario, correo-->
                   <div class="crudAdmin" align="center">
@@ -213,7 +213,7 @@ include_once '../modelos/selectTables.php';
                         <td><?php echo $resultadoAdminGamer -> id_redsocial ?></td>
 
                         <td>
-                        <form action="#" method="post">
+                        <form action="editGamer.php" method="post">
                         <button class="btn btn-success" type="submit" name="editar"
                         value="<?php echo htmlspecialchars($identificador); ?>">Editar
                         </button>
@@ -221,7 +221,7 @@ include_once '../modelos/selectTables.php';
                         </td>
 
                         <td>
-                        <form method="post" action="#">
+                        <form method="post" action="../controladores/borrar_Gamer.php">
                         <button type="submit" class="btn btn-danger" name="id"
                         value="<?php echo htmlspecialchars($identificador); ?>">Borrar
                         </button>

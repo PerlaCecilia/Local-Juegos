@@ -14,7 +14,7 @@ include_once '../modelos/selectTables.php';
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Juegos Admin</title>
+  <title>Accesorios</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -194,13 +194,13 @@ include_once '../modelos/selectTables.php';
                       </thead>
                       <tbody>
 
-                        <?php foreach ($getAdminAccesorio as $getAdminAccesorio){ ?>
-                        <?php $identificador = $getAdminAccesorio -> id_accesorio ?>
+                        <?php foreach ($resultadoAdminAccesorio as $resultadoAdminAccesorio){ ?>
+                        <?php $identificador = $resultadoAdminAccesorio -> id_accesorio ?>
                         <tr>
-                        <td><?php echo $getAdminAccesorio -> id_accesorio ?></td>
-                        <td><?php echo $getAdminAccesorio -> nombre ?></td>
+                        <td><?php echo $resultadoAdminAccesorio -> id_accesorio ?></td>
+                        <td><?php echo $resultadoAdminAccesorio -> nombre ?></td>
 
-                        <td>
+                        <td align="right">
                         <form action="#" method="post">
                         <button class="btn btn-success" type="submit" name="editar"
                         value="<?php echo htmlspecialchars($identificador); ?>">Editar

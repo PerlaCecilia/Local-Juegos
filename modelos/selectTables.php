@@ -3,7 +3,7 @@
   include_once "../controladores/conexion.php";
 
   // Vista de la tabla para usuario normal
-  $getNormalTorneo = $BD -> query("SELECT id_torneo, nombre, juego, fecha, hora, modalidad, forma, max_jugadores, descripcion, estatus FROM torneo");
+  $getNormalTorneo = $BD -> query("SELECT t.id_torneo as id, t.nombre, j.nombre as juego, t.fecha, t.hora, m.tipo as modalidad, f.tipo as forma, t.max_jugadores, t.descripcion, e.tipo as estatus FROM torneo t INNER JOIN juego j ON t.juego = j.id_juego INNER JOIN modalidad m ON t.modalidad = m.id_modalidad INNER JOIN forma f ON t.forma = f.id_forma INNER JOIN estatus e ON t.estatus = e.id_estatus ORDER BY `id` ASC");
   $resultadoNormalTorneo = $getNormalTorneo -> fetchAll(PDO::FETCH_OBJ);
 
   //"if" en caso de que retorne NULL
@@ -19,7 +19,7 @@
     // Mensaje de alerta
   }
 
-  $getNormalConsola = $BD -> query("SELECT id_consola, id_plataforma, numero, serial, nombre FROM consola");
+  $getNormalConsola = $BD -> query("SELECT c.id_consola as id, p.nombre as plataforma, c.numero, c.serial, c.nombre FROM consola c INNER JOIN plataforma p ON c.id_plataforma = p.id_plataforma");
   $resultadoNormalConsola = $getNormalConsola -> fetchAll(PDO::FETCH_OBJ);
 
   //"if" en caso de que retorne NULL
@@ -27,7 +27,7 @@
     // Mensaje de alerta
   }
 
-  $getAdminInstalado = $BD -> query("SELECT id_instalado, id_juego, id_consola FROM instalado");
+  $getAdminInstalado = $BD -> query("SELECT i.id_instalado as id, j.nombre as juego, c.nombre as consola FROM instalado i INNER JOIN juego j ON i.id_juego = j.id_juego INNER JOIN consola c ON i.id_consola = c.id_consola ORDER BY `id` ASC");
   $resultadoAdminInstalado = $getAdminInstalado -> fetchAll(PDO::FETCH_OBJ);
 
   //"if" en caso de que retorne NULL
@@ -35,7 +35,7 @@
     // Mensaje de alerta
   }
 
-  $getAdminRenta = $BD -> query("SELECT id_renta, fecha, hora, id_gamer, id_accesorio, id_instalado, juego, consola FROM renta");
+  $getAdminRenta = $BD -> query("SELECT r.id_renta as id, r.fecha, r.hora, g.nombre as gamer, a.nombre as accesorio, j.nombre as juego, c.nombre as consola FROM renta r INNER JOIN gamers g ON r.id_gamer = g.id_gamer INNER JOIN accesorio a ON r.id_accesorio = a.id_accesorio INNER JOIN instalado i ON r.id_instalado = i.id_instalado INNER JOIN juego j ON r.juego = j.id_juego INNER JOIN consola c ON r.consola = c.id_consola ORDER BY `id` ASC");
   $resultadoAdminRenta = $getAdminRenta -> fetchAll(PDO::FETCH_OBJ);
 
   //"if" en caso de que retorne NULL

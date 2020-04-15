@@ -177,11 +177,11 @@ include_once '../modelos/selectTables.php';
                   <h3>Juegos</h3>
                 </div>
 
-                <a href="agregarCliente.php">
+                <a href="agregarJuego.php">
                   <input type="button" name="" value="Nuevo" class="btn btn-primary">
                 </a>
 
-                <form class="" action="index.html" method="post">
+                <form class="" action="editJuego.php" method="post">
 
                   <!--nombre, usuario, correo-->
                   <div class="crudAdmin" align="center">
@@ -203,7 +203,7 @@ include_once '../modelos/selectTables.php';
                         <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $resultadoNormalJuego -> imagen ).'" style="height: 120px; width: 75px;"/>'; ?></td>
                         <td><?php echo $resultadoNormalJuego -> nombre ?></td>
                         <td>
-                        <form action="#" method="post">
+                        <form action="editJuego.php" method="post">
                         <button class="btn btn-success" type="submit" name="editar"
                         value="<?php echo htmlspecialchars($identificador); ?>">Editar
                         </button>
@@ -211,7 +211,7 @@ include_once '../modelos/selectTables.php';
                         </td>
 
                         <td>
-                        <form method="post" action="#">
+                        <form method="post" action="../controladores/borrar_Juego.php">
                         <button type="submit" class="btn btn-danger" name="id"
                         value="<?php echo htmlspecialchars($identificador); ?>">Borrar
                         </button>

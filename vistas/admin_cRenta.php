@@ -177,11 +177,11 @@ include_once '../modelos/selectTables.php';
                   <h3>Rentas</h3>
                 </div>
 
-                <a href="agregarCliente.php">
+                <a href="agregarRenta.php">
                   <input type="button" name="" value="Nuevo" class="btn btn-primary">
                 </a>
 
-                <form class="" action="index.html" method="post">
+                <form class="" action="editRenta.php" method="post">
 
                   <!--nombre, usuario, correo-->
                   <div class="crudAdmin" align="center">
@@ -193,7 +193,6 @@ include_once '../modelos/selectTables.php';
                           <th>Hora</th>
                           <th>Gamer</th>
                           <th>Accesorio</th>
-                          <th>Instalado</th>
                           <th>Juego</th>
                           <th>Consola</th>
                         </tr>
@@ -201,19 +200,18 @@ include_once '../modelos/selectTables.php';
                       <tbody>
 
                         <?php foreach ($resultadoAdminRenta as $resultadoAdminRenta){ ?>
-                        <?php $identificador = $resultadoAdminRenta -> id_renta ?>
+                        <?php $identificador = $resultadoAdminRenta -> id ?>
                         <tr>
-                        <td><?php echo $resultadoAdminRenta -> id_renta ?></td>
+                        <td><?php echo $resultadoAdminRenta -> id ?></td>
                         <td><?php echo $resultadoAdminRenta -> fecha ?></td>
                         <td><?php echo $resultadoAdminRenta -> hora ?></td>
-                        <td><?php echo $resultadoAdminRenta -> id_gamer ?></td>
-                        <td><?php echo $resultadoAdminRenta -> id_accesorio ?></td>
-                        <td><?php echo $resultadoAdminRenta -> id_instalado ?></td>
+                        <td><?php echo $resultadoAdminRenta -> gamer ?></td>
+                        <td><?php echo $resultadoAdminRenta -> accesorio ?></td>
                         <td><?php echo $resultadoAdminRenta -> juego ?></td>
                         <td><?php echo $resultadoAdminRenta -> consola ?></td>
 
                         <td>
-                        <form action="#" method="post">
+                        <form action="editRenta.php" method="post">
                         <button class="btn btn-success" type="submit" name="editar"
                         value="<?php echo htmlspecialchars($identificador); ?>">Editar
                         </button>
@@ -221,7 +219,7 @@ include_once '../modelos/selectTables.php';
                         </td>
 
                         <td>
-                        <form method="post" action="#">
+                        <form method="post" action="../controladores/borrar_Renta.php">
                         <button type="submit" class="btn btn-danger" name="id"
                         value="<?php echo htmlspecialchars($identificador); ?>">Borrar
                         </button>
